@@ -1,8 +1,6 @@
 header
   height: 450px
-  background: url(../img/hero-bg.jpg) center
-  // this background size cover property allow the image to be strech proportionaly really cool stuff
-  background-size: cover
+  @extend %bg-img
 
   .logo
     +size(50px)
@@ -11,6 +9,8 @@ header
 
     path
       fill: rgba(0,0,0,0.7)
+    svg
+      +size(50px)
 
   nav
     float: right
