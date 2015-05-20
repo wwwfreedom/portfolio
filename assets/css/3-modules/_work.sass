@@ -1,0 +1,62 @@
+.alt-section
+  background: $bgcolor
+
+.thumb-container
+  max-width: 960px
+  margin: 0 auto
+  padding-bottom: 100px
+  +clearfix
+
+  .thumb-unit
+    display: block
+    width: 25%
+    // height: 150px
+    float: left
+    position: relative
+    // lesson (if you want to scale the div in proportion to the width) this padding top is key to make the div scale down in proportion to the window when it's scale down. it controls the size
+    padding-top: 16%
+    // this is hide anything that overflow or is spill out of the div containing the thumb-unit
+    overflow: hidden
+    cursor: pointer
+    +perspective(300)
+    background:
+      // image: url(/assets/img/work/proj-1/thumb.jpg)
+      size: cover
+      // lesson this is to make the image center background image into the div
+      position: center center
+      repeat: no-repeat
+
+    @media screen and (max-width: 760px)
+      width: 50%
+      padding-top: 26%
+
+    .thumb-overlay
+      // lesson also important to the have the position at 0px so the stuff in the div doesn't get push out. the 0px for all top, right, bottom, left will strecth the overlay to cover the whole thumb unit
+      +position(absolute, -50% 0px null 0px)
+      height: 100%
+      background: fade-out($accent, 0.1)
+      text-align: center
+      +transition
+      +display(flex)
+      +align-items(center)
+      +justify-content(space-around)
+      // the opacity hides the overlay element
+      opacity: 0
+      +transform(rotateX(90deg))
+      +transform-origin(center bottom)
+
+    strong
+      display: block
+      padding: 0px 20px
+      color: white
+      font:
+        weight: 300
+        size: 24px
+      text-transform: uppercase
+      line-height: 1.2
+
+    &:hover
+      .thumb-overlay
+        +position(absolute, 0% 0px null 0px)
+        opacity: 1
+        +transform(rotate(0deg))
