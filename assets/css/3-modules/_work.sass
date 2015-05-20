@@ -16,7 +16,7 @@
     // lesson (if you want to scale the div in proportion to the width) this padding top is key to make the div scale down in proportion to the window when it's scale down. it controls the size
     padding-top: 16%
     // this is hide anything that overflow or is spill out of the div containing the thumb-unit
-    overflow: hidden
+    // overflow: hidden
     cursor: pointer
     +perspective(300)
     background:
@@ -32,18 +32,19 @@
 
     .thumb-overlay
       // lesson also important to the have the position at 0px so the stuff in the div doesn't get push out. the 0px for all top, right, bottom, left will strecth the overlay to cover the whole thumb unit
-      +position(absolute, -50% 0px null 0px)
+      +position(absolute, 0% 0px null 0px)
       height: 100%
       background: fade-out($accent, 0.1)
       text-align: center
-      +transition
       +display(flex)
       +align-items(center)
       +justify-content(space-around)
       // the opacity hides the overlay element
+      // +transform(rotateX(90deg))
+      // +transform-origin(center bottom)
+      +transform(matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1))
       opacity: 0
-      +transform(rotateX(90deg))
-      +transform-origin(center bottom)
+      +transition(opacity, 300ms, ease-in, 500ms)
 
     strong
       display: block
@@ -56,7 +57,9 @@
       line-height: 1.2
 
     &:hover
+      z-index: 2
       .thumb-overlay
-        +position(absolute, 0% 0px null 0px)
+        // +position(absolute, 0% 0px null 0px)
+        // +transform(rotate(0deg))
+        @extend %animation
         opacity: 1
-        +transform(rotate(0deg))
