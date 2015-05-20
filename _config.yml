@@ -1,15 +1,3 @@
-# Site settings
-title: Kevin Truong
-email: tig3r86@gmail.com
-description: Web Specialist // Traveller // Entrepreneur
-
-# Change the default background image, avatar and blurb
-bg-img: hero-bg.jpg
-avatar: travitar.jpg
-
-blurb: <p><strong>Kevin specialises in making things</strong> for human people. Most of the things he makes are <a href="#">digital interfaces</a>, but he also puts efforts into planning his next <a href="#">travel adventure</a>.</p>
-
-
 # Build settings
 
 markdown: kramdown

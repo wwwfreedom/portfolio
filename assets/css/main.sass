@@ -1,6 +1,14 @@
 ---
 ---
 
+// HEADER PATH CONIFGURATION
+// this is to create a link to the portfolio to get the location of the path and store it into this sass variable $hero-path. By doing this you can don't have to do inline css and keep all the style with sass.
+$hero-path: '{{ site.data.portfolio.bg-img }}'
+
+// ABOUT PATH CONFIGURATION
+
+$avatar-path: '{{ site.data.portfolio.avatar }}'
+
 @import '1-tools/-tools-index'
 @import '2-base/-base-index'
 @import '3-modules/-modules-index'
