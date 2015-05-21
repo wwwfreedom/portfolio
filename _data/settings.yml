@@ -18,7 +18,10 @@ menu:
 bg-img: hero-bg.jpg
 avatar: travitar.jpg
 
-blurb: <p><strong>Kevin specialises in making things</strong> for human people. Most of the things he makes are <a href="#">digital interfaces</a>, but he also puts efforts into planning his next <a href="#">travel adventure</a>.</p>
+blurb: >
+  **Kevin specialises in making things** for human people. Most of the things he makes are [digital interfaces](http://google.com), but he also puts efforts into planning his next [travel adventure](#).
+# this is the original html mark up make sure to take the greater sign '>' above out when not using markdown.
+# <p><strong>Kevin specialises in making things</strong> for human people. Most of the things he makes are <a href="#">digital interfaces</a>, but he also puts efforts into planning his next <a href="#">travel adventure</a>.</p>
 
 skills:
 - {name: Communication, value: '9'}

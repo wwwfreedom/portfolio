@@ -38,6 +38,8 @@
       // lesson this is to make the image center background image into the div
       position: center center
       repeat: no-repeat
+    @if $animation != "bounceOut"
+      overflow: hidden
 
     @media screen and (max-width: 760px)
       width: 50%
@@ -45,19 +47,19 @@
 
     .thumb-overlay
       // lesson also important to the have the position at 0px so the stuff in the div doesn't get push out. the 0px for all top, right, bottom, left will strecth the overlay to cover the whole thumb unit
-      +position(absolute, 0% 0px null 0px)
-      height: 100%
-      background: fade-out($accent, 0.1)
-      text-align: center
+      +position(absolute)
       +display(flex)
       +align-items(center)
       +justify-content(space-around)
-      // +transform(rotateX(90deg))
-      // +transform-origin(center bottom)
-      +transform(matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1))
-      // the opacity hides the overlay element
-      opacity: 0
-      +transition(opacity, 300ms, ease-in, 500ms)
+      // height: 100%
+      background: fade-out($accent, 0.1)
+      text-align: center
+      // +transform(matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1))
+      // // the opacity hides the overlay element
+      // opacity: 0
+      // +transition(opacity, 300ms, ease-in, 500ms)
+      // this is the start of the animation
+      @extend %animationstart_#{$animation}
 
     strong
       display: block
@@ -74,8 +76,9 @@
       .thumb-overlay
         // +position(absolute, 0% 0px null 0px)
         // +transform(rotate(0deg))
-        @extend %animation
-        opacity: 1
+        // end of the animation when you hover over the thumb-overlay
+        @extend %#{$animation}
+        // opacity: 1
 
 .work-container
   max-width: 600px
