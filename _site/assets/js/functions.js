@@ -1,6 +1,7 @@
 $( document ).ready(function() {
   smoothScroll(400);
   workBelt();
+  workLoad();
 
 });
 
@@ -21,6 +22,7 @@ function smoothScroll(duration) {
   });
 }
 
+// this function is responsible for getting back and forth between the thumbnail and the work section by activating a bit of css trickery
 function workBelt () {
 
   // look for all the thumb unit
@@ -33,5 +35,24 @@ function workBelt () {
   $('.work-return').click(function() {
     $('.work-belt').css('left', '0%');
     $('.work-container').hide(800);
+  });
+}
+
+function workLoad() {
+  // use this for static asset only not random stuff that only appear once
+  $.ajaxSetup({ cache: true });
+
+  $('.thumb-unit').click(function() {
+    // event.preventDefault();
+    // this is to cache the this and 'this' in this case is the thumb-unit div part 11, at 13.57mins in
+    var $this = $(this);
+    // find the text that is in the strong tag
+    var newTitle = $this.find('strong').text();
+    var newFolder = $this.data('folder');
+    var spinner = '<div class="loader">Loading...</div>';
+    var newHTML = '/work/'+ newFolder + '.html';
+
+    $('.project-load').html(spinner).load(newHTML);
+    $('.project-title').text(newTitle);
   });
 }
