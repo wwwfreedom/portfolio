@@ -1,10 +1,23 @@
-.alt-section
-  background: $bgcolor
+.section-work
+  // this will stop the weird sidway srolling thing
+  overflow-x: hidden
+// making it 200% the work-belt div will go right off the page check part 11 at 5.30 min at dev tip videos for explanation
+.work-belt
+  width: 200%
+  // background: pink
+  position: relative
+  left: 0%
+  +transition(all, 800ms)
+
+
+.thumb-wrap, .work-wrap
+  // 50% of 200% is 100% of the document part 11 10 mins in for explanation
+  width: 50%
+  float: left
 
 .thumb-container
   max-width: 960px
   margin: 0 auto
-  padding-bottom: 100px
   +clearfix
 
   .thumb-unit
@@ -39,10 +52,10 @@
       +display(flex)
       +align-items(center)
       +justify-content(space-around)
-      // the opacity hides the overlay element
       // +transform(rotateX(90deg))
       // +transform-origin(center bottom)
       +transform(matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1))
+      // the opacity hides the overlay element
       opacity: 0
       +transition(opacity, 300ms, ease-in, 500ms)
 
@@ -63,3 +76,44 @@
         // +transform(rotate(0deg))
         @extend %animation
         opacity: 1
+
+.work-container
+  max-width: 600px
+  margin: 0px auto
+  padding: 0 15px
+  // +box-sizing(border-box)
+  display: none
+  position: relative
+
+  h4
+    color: $accent
+    font-weight: 300
+    text-transform: uppercase
+    font-size: 28px
+    line-height: 1.2
+    margin: 0 0 20px
+
+  img
+    max-width: 100%
+    margin-bottom: 20px
+
+  .work-return
+    +size(40px)
+    cursor: pointer
+    opacity: 0.5
+    +position(absolute, -4px null null -60px)
+
+    path
+      fill: rgba(0,0,0,0.4)
+
+    &:hover
+      opacity: 1
+
+@media (max-width: 740px)
+  .work-container
+
+    .work-return
+      left: 0px
+
+    h4
+      margin-left: 60px

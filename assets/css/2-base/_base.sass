@@ -93,6 +93,9 @@ body
   -webkit-font-smoothing: antialiased
   -webkit-text-size-adjust: 100%
 
+// this ensure that all svg will be contain in the div
+svg
+  +size(100%)
 
 h3
   @extend %small-bold
@@ -103,4 +106,9 @@ h3
 @media screen and (max-width: 480px)
   h3
     padding: 50px 0 50px
+
+.alt-section
+  background: $bgcolor
+  padding-bottom: 100px
+
 
