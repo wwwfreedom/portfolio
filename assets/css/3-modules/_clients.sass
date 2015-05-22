@@ -7,9 +7,9 @@
 
   .client-unit
     max-width: 750px
-    margin: 0 0 50px -375px
+    position: relative
+    margin: 50px auto
     // bourbon mixin to activate and use flexbox
-    +position(absolute, 0px null null 50%)
     display: none
     z-index: 1
 
@@ -60,25 +60,27 @@
 .clients-logos
   position: relative
   max-width: 750px
-  margin: 350px auto 50px
+  margin: 50px auto 50px
   +display(flex)
-  +justify-content(center)
-  +align-items(space-around)
+  // pushing all the item to align to the line at the bottom
+  +align-items(flex-end)
+  +justify-content(space-around)
 
   .client-logo
-    height: 80px
-    min-width: 200px
-    background:
-      size: contain
-      repeat: no-repeat
-      position: center
     cursor: pointer
     margin: 0 20px
+    // this is to compensate for the border bottom below from affecting the dimension of the logo making it hop up and down
+    border-bottom: 4px solid transparent
+    opacity: 0.5
+    padding-bottom: 10px
 
     // & in sass in a placeholder so everything that came before it. this is if a client logo that is inside client-logos that have an 'active-client' select that.
     &.active-client
+      border-bottom: 4px solid $accent
+      opacity: 1
       // two box shadow first one is white so matchs the background and you won't see it the second is the one you will see the difference in 10px give the box shadow top padding from the logo more whitespace ftw.
-      box-shadow: 0px 10px 0px $bg-color, 0px 14px 0px $accent
+      // use the box shadow to highligh  background images other wise use border bottom
+      // box-shadow: 0px 10px 0px $bg-color, 0px 14px 0px $accent
 
 .client-controls
   +position(absolute, 0px 0px 0px 0px)
@@ -91,10 +93,61 @@
   .client-control-next
     // 50% down from the parent element which is the client-controls div
     +position(absolute, 50% 10px null null)
+    z-index: 2
+    // lesson make sure that all the navigation control have a higher z-index so you can actually click it. Sometime the control is cover by the parent div and you can't click it because the parent div is over it. If your javascript is correct but you can't seem to trigger the button it's probably because of the lower z-index of the element you trying to trigger. Solution is give the dom element you trying to active a higher z-index than it's parent or shift the html code lower in the html file.
 
   .client-control-prev
     +position(absolute, 50% null null 10px)
+    z-index: 2
 
+// Clients Mobile nav
+.client-mobile-nav
+  text-align: center
+  display: none
+
+  span
+    cursor: pointer
+    display: inline-block
+    +size(16px)
+    border-radius: 50%
+    border: solid 2px $bgcolor
+    margin: 0px 10px
+
+    &.active-client
+      border-color: $accent
+
+
+
+@media (max-width: 750px)
+  .client-controls
+    display: none
+
+  .clients-belt
+
+    // lesson this is how you select an element with two classes in sass note the NO SPACING
+    .client-unit.active-client
+      // making the element stack
+      display: block
+      position: relative
+      margin-left: 0px
+      left: auto
+
+      .client-face
+        margin-bottom: 20px
+
+      .client-content
+        padding: 0px 30px
+        max-width: 400px
+        margin: 0px auto
+
+      .client-quote-mark
+        left: 15px
+
+  .clients-logos
+    display: none
+
+  .client-mobile-nav
+    display: block
 
 
 

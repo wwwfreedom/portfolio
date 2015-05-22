@@ -2,12 +2,16 @@
 
   <h3 id="clients">Clients</h3>
 
-
   <div class="client-controls">
     <div class="client-control-next">{% include icons/icon-next.html %}</div>
     <div class="client-control-prev">{% include icons/icon-prev.html %}</div>
   </div>
 
+  <div class="client-mobile-nav">
+    {% for client in site.data.settings.clients %}
+      <span></span>
+    {% endfor %}
+  </div>
 
   <div class="clients-belt">
 
@@ -29,9 +33,10 @@
 
   </div>
 
+
   <div class="clients-logos">
     {% for client in site.data.settings.clients %}
-    <div class="client-logo" style="background-image: url(/assets/img/clients/{{ client.logo }});"></div>
+    <img class="client-logo" src="/assets/img/clients/{{ client.logo }}" alt="{{ client.logo }}">
     {% endfor %}
   </div>
 

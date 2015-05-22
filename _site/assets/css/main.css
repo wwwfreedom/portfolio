@@ -869,10 +869,8 @@ footer {
   position: relative; }
   .clients-belt .client-unit {
     max-width: 750px;
-    margin: 0 0 50px -375px;
-    position: absolute;
-    top: 0px;
-    left: 50%;
+    position: relative;
+    margin: 50px auto;
     display: none;
     z-index: 1; }
     .clients-belt .client-unit.active-client {
@@ -918,7 +916,7 @@ footer {
 .clients-logos {
   position: relative;
   max-width: 750px;
-  margin: 350px auto 50px;
+  margin: 50px auto 50px;
   display: -webkit-box;
   display: -moz-box;
   display: box;
@@ -926,34 +924,33 @@ footer {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  box-align: end;
+  -webkit-align-items: flex-end;
+  -moz-align-items: flex-end;
+  -ms-align-items: flex-end;
+  -o-align-items: flex-end;
+  align-items: flex-end;
+  -ms-flex-align: end;
   -webkit-box-pack: center;
   -moz-box-pack: center;
   box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center;
-  -webkit-box-align: space-around;
-  -moz-box-align: space-around;
-  box-align: space-around;
-  -webkit-align-items: space-around;
-  -moz-align-items: space-around;
-  -ms-align-items: space-around;
-  -o-align-items: space-around;
-  align-items: space-around;
-  -ms-flex-align: space-around; }
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  -o-justify-content: space-around;
+  justify-content: space-around;
+  -ms-flex-pack: center; }
   .clients-logos .client-logo {
-    height: 80px;
-    min-width: 200px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     cursor: pointer;
-    margin: 0 20px; }
+    margin: 0 20px;
+    border-bottom: 4px solid transparent;
+    opacity: 0.5;
+    padding-bottom: 10px; }
     .clients-logos .client-logo.active-client {
-      box-shadow: 0px 10px 0px #fff, 0px 14px 0px #e1c184; }
+      border-bottom: 4px solid #e1c184;
+      opacity: 1; }
 
 .client-controls {
   position: absolute;
@@ -968,8 +965,48 @@ footer {
   .client-controls .client-control-next {
     position: absolute;
     top: 50%;
-    right: 10px; }
+    right: 10px;
+    z-index: 2; }
   .client-controls .client-control-prev {
     position: absolute;
     top: 50%;
-    left: 10px; }
+    left: 10px;
+    z-index: 2; }
+
+.client-mobile-nav {
+  text-align: center;
+  display: none; }
+  .client-mobile-nav span {
+    cursor: pointer;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    border: solid 2px #e5eaee;
+    margin: 0px 10px; }
+    .client-mobile-nav span.active-client {
+      border-color: #e1c184; }
+
+@media (max-width: 750px) {
+  .client-controls {
+    display: none; }
+
+  .clients-belt .client-unit.active-client {
+    display: block;
+    position: relative;
+    margin-left: 0px;
+    left: auto; }
+    .clients-belt .client-unit.active-client .client-face {
+      margin-bottom: 20px; }
+    .clients-belt .client-unit.active-client .client-content {
+      padding: 0px 30px;
+      max-width: 400px;
+      margin: 0px auto; }
+    .clients-belt .client-unit.active-client .client-quote-mark {
+      left: 15px; }
+
+  .clients-logos {
+    display: none; }
+
+  .client-mobile-nav {
+    display: block; } }
