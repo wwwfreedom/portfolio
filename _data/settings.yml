@@ -46,6 +46,13 @@ projects:
 - {name: Weather Dashboard, folder: 'proj-7'}
 - {name: Stripes & Co, folder: 'proj-8'}
 
+#-------------------------------
+# Clients Section
 
+clients:
+- {avatar: 'face-aaroni.jpg', name: 'Scott Summers', title: 'Director of Design, Quebec ltd', quote: '**Lorem ipsum dolor sit amet, consectetur adipisicing elit.** Repellat, at vel exercitationem ullam, illum omnis atque sint perferendis nesciunt nobis, autem animi fuga quia consequatur neque deserunt minus magni modi.', logo: 'logo1.png'}
+- {avatar: 'face-atariboy.jpg', name: 'Scott Summers', title: 'Director of Design, Quebec ltd', quote: '**Lorem ipsum dolor sit amet, consectetur adipisicing elit.** Repellat, at vel exercitationem ullam, illum omnis atque sint perferendis nesciunt nobis, autem animi fuga quia consequatur neque deserunt minus magni modi.', logo: 'logo2.png'}
+- {avatar: 'face-jackiesaik.jpg', name: 'Scott Summers', title: 'Director of Design, Quebec ltd', quote: '**Lorem ipsum dolor sit amet, consectetur adipisicing elit.** Repellat, at vel exercitationem ullam, illum omnis atque sint perferendis nesciunt nobis, autem animi fuga quia consequatur neque deserunt minus magni modi.', logo: 'logo3.png'}
+- {avatar: 'face-teleject.jpg', name: 'Scott Summers', title: 'Director of Design, Quebec ltd', quote: '**Lorem ipsum dolor sit amet, consectetur adipisicing elit.** Repellat, at vel exercitationem ullam, illum omnis atque sint perferendis nesciunt nobis, autem animi fuga quia consequatur neque deserunt minus magni modi.', logo: 'logo4.png'}
 
 

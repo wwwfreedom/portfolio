@@ -1,0 +1,101 @@
+.section-clients
+  position: relative
+
+.clients-belt
+  width: 100%
+  position: relative
+
+  .client-unit
+    max-width: 750px
+    margin: 0 0 50px -375px
+    // bourbon mixin to activate and use flexbox
+    +position(absolute, 0px null null 50%)
+    display: none
+    z-index: 1
+
+
+    // when the client unit has the class .active-client then add these properties
+    &.active-client
+      +display(flex)
+      @extend %#{$animation}
+
+    .client-face
+      min-width: 300px
+      text-align: center
+
+      img
+        max-width: 100px
+        border-radius: 50%
+
+      .client-name
+        display: block
+        text-transform: uppercase
+        font-weight: 400
+        letter-spacing: 1px
+
+      .client-title
+        font:
+          style: normal
+          size: 12px
+        color: #999
+
+
+    .client-content
+      font:
+        size: 18px
+        weight: 300
+      line-height: 36px
+      margin-top: -10px
+      position: relative
+
+      .client-quote-mark
+        +position(absolute, -18px null null -15px)
+        +size(60px)
+        z-index: -1
+        opacity: 0.3
+
+        path
+          fill: $accent
+
+.clients-logos
+  position: relative
+  max-width: 750px
+  margin: 350px auto 50px
+  +display(flex)
+  +justify-content(center)
+  +align-items(space-around)
+
+  .client-logo
+    height: 80px
+    min-width: 200px
+    background:
+      size: contain
+      repeat: no-repeat
+      position: center
+    cursor: pointer
+    margin: 0 20px
+
+    // & in sass in a placeholder so everything that came before it. this is if a client logo that is inside client-logos that have an 'active-client' select that.
+    &.active-client
+      // two box shadow first one is white so matchs the background and you won't see it the second is the one you will see the difference in 10px give the box shadow top padding from the logo more whitespace ftw.
+      box-shadow: 0px 10px 0px $bg-color, 0px 14px 0px $accent
+
+.client-controls
+  +position(absolute, 0px 0px 0px 0px)
+  // the '>' mean select all of the divs in the client-controls div
+  > div
+    +size(40px)
+    // this is offset the size of the arrow to make it perfect center
+    margin-top: -20px
+
+  .client-control-next
+    // 50% down from the parent element which is the client-controls div
+    +position(absolute, 50% 10px null null)
+
+  .client-control-prev
+    +position(absolute, 50% null null 10px)
+
+
+
+
+
