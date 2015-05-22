@@ -27,14 +27,14 @@ function smoothScroll(duration) {
 function workBelt () {
 
   // look for all the thumb unit
-  $('.thumb-unit').click(function(event) {
-    event.preventDefault();
-    $('.work-belt').css('left', '-100%');
+  $('.thumb-unit').click(function() {
+    // $('.work-belt').css('left', '-100%');
+    $('.work-belt').addClass('slided');
     $('.work-container').show();
   });
 
   $('.work-return').click(function() {
-    $('.work-belt').css('left', '0%');
+    $('.work-belt').removeClass('slided');
     $('.work-container').hide(800);
   });
 }
