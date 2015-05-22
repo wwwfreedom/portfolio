@@ -17,11 +17,13 @@
 
     {% for client in site.data.settings.clients %}
     <div class="client-unit">
-      <div class="client-face">
-        <img src="assets/img/clients/{{ client.avatar }}" alt="" />
-        <strong class="client-name"> {{ client.name }} </strong>
-        <em class="client-title">{{ client.title }}</em>
-      </div>
+      <figure class="client-face">
+        <figcaption>
+          <img src="assets/img/clients/{{ client.avatar }}" alt="" />
+          <strong class="client-name"> {{ client.name }} </strong>
+          <em class="client-title">{{ client.title }}</em>
+        </figcaption>
+      </figure>
 
       <div class="client-content">
         <div class="client-quote-mark">{% include icons/icon-quote-mark.html %}</div>

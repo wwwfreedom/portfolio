@@ -644,6 +644,8 @@ footer {
     height: 200px;
     width: 200px;
     background-image: url(../img/travitar.jpg);
+    background-size: cover;
+    background-position: center;
     border-radius: 50%;
     -webkit-box-ordinal-group: 3;
     -moz-box-ordinal-group: 3;
