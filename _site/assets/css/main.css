@@ -544,7 +544,7 @@ header, footer {
 
 header {
   height: 450px;
-  background-image: url(/assets/img/hero-bg.jpg); }
+  background-image: url(../img/hero-bg.jpg); }
   header .logo {
     height: 50px;
     width: 50px;
@@ -586,7 +586,7 @@ header {
     text-transform: uppercase; }
 
 footer {
-  background-image: url(/assets/img/hero-bg.jpg); }
+  background-image: url(../img/hero-bg.jpg); }
   footer .lockup {
     padding: 30px; }
     footer .lockup:after {
@@ -643,7 +643,7 @@ footer {
   .face-lockup .face-img {
     height: 200px;
     width: 200px;
-    background-image: url(/assets/img/travitar.jpg);
+    background-image: url(../img/travitar.jpg);
     border-radius: 50%;
     -webkit-box-ordinal-group: 3;
     -moz-box-ordinal-group: 3;

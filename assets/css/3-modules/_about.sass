@@ -10,7 +10,8 @@
   .face-img
     +size(200px)
     // the #is use for an inline sass variable
-    background-image: url(/assets/img/#{$avatar-path})
+    // background-image: url(/assets/img/#{$avatar-path}) LESSON LEARNED THIS IS ABSOLUTE PATH THE ONE BELOW IS RELATIVE PATH. USE RELATIVE PATH.
+    background-image: url(../img/#{$avatar-path})
     border-radius: 50%
     // using jekyll site wide variable and have it inline in the config and html
     // background: url(/assets/img/travitar.jpg)
